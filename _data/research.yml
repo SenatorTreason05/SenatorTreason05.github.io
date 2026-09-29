@@ -1,0 +1,16 @@
+# Replace these examples with your actual projects.
+- title: "Research Project One"
+  status: "Ongoing"
+  description: >-
+    A concise two- or three-sentence description of the problem, the mathematical
+    setting, and what you are trying to understand.
+  links:
+    - label: "Notes"
+      url: "#"
+
+- title: "Research Project Two"
+  status: "Working notes"
+  description: >-
+    Another project can go here. Keep this short enough that a visitor can scan
+    the page quickly, then link to a PDF or longer write-up if you have one.
+  links: []

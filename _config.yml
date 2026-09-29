@@ -1,0 +1,57 @@
+# ------------------------------------------------------------
+# Personal site settings — edit these first
+# ------------------------------------------------------------
+title: "YOUR NAME"
+short_name: "YOUR NAME"
+tagline: "Mathematics · Research · Teaching"
+description: "Personal academic website for YOUR NAME."
+
+# For a user site named YOUR_GITHUB_USERNAME.github.io:
+url: "https://YOUR_GITHUB_USERNAME.github.io"
+baseurl: ""
+
+# Profile
+name: "YOUR NAME"
+role: "Student / Researcher in Mathematics"
+affiliation: "Your University"
+location: ""
+email: "your.email@example.com"
+github_username: "YOUR_GITHUB_USERNAME"
+# linkedin_username: ""
+# scholar_url: ""
+
+# Set to true after placing your CV at assets/files/cv.pdf
+show_cv: false
+cv_path: "/assets/files/cv.pdf"
+
+# Site behavior
+permalink: pretty
+markdown: kramdown
+highlighter: rouge
+future: false
+
+# Plugins supported by GitHub Pages / the github-pages gem
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Keep build output tidy
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+# Defaults for ordinary pages
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post

@@ -1,0 +1,10 @@
+# Add one item per set of notes. Put PDFs in assets/files/ and update the URLs.
+- title: "Foundations of Mathematics"
+  term: "Fall 2026"
+  description: "Definitions, examples, proofs, and exercises from an introductory proof-based course."
+  url: "#"
+
+- title: "Mathematics Subject GRE Notes"
+  term: ""
+  description: "A compact collection of formulas, concepts, and representative problems."
+  url: "#"

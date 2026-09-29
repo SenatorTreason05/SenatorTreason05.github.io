@@ -1,0 +1,2 @@
+Put your CV here as: assets/files/cv.pdf
+Then set show_cv: true in _config.yml.
