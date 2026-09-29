@@ -30,6 +30,38 @@ permalink: /
   </aside>
 </section>
 
+<section class="section-block puzzle-section" aria-labelledby="daily-puzzle-title">
+  <div class="puzzle-copy">
+    <p class="eyebrow">Chess</p>
+    <h2 id="daily-puzzle-title">Puzzle of the day</h2>
+    <p class="puzzle-description">
+      A small daily diversion, courtesy of Lichess. Make your move directly on the board.
+    </p>
+
+    <div class="puzzle-meta" id="lichess-puzzle-meta" aria-live="polite">
+      <span class="puzzle-chip">Daily Lichess puzzle</span>
+    </div>
+
+    <a
+      id="lichess-puzzle-link"
+      class="text-link"
+      href="https://lichess.org/training/daily"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Open on Lichess →</a>
+  </div>
+
+  <div class="puzzle-frame-wrap">
+    <iframe
+      class="lichess-puzzle-frame"
+      src="https://lichess.org/training/frame?theme=blue&bg=light&pieceSet=cburnett"
+      title="Lichess daily chess puzzle"
+      loading="lazy"
+      frameborder="0"
+    ></iframe>
+  </div>
+</section>
+
 <section class="section-block">
   <div class="section-heading">
     <p class="eyebrow">Current work</p>
