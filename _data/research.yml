@@ -1,16 +1,72 @@
-# Replace these examples with your actual projects.
-- title: "Research Project One"
-  status: "Ongoing"
-  description: >-
-    A concise two- or three-sentence description of the problem, the mathematical
-    setting, and what you are trying to understand.
-  links:
-    - label: "Notes"
-      url: "#"
+- title: "Causal Representation Learning from Interventions"
+  category: "ongoing"
+  status: "2025–Present · Harvard SEAS Applied Algebra Group"
+  description: >
+    Studying when shared latent causal structure can be recovered from multiple
+    unpaired views of the same underlying system. For non-Gaussian data, I develop
+    identifiability results showing how interventions distributed across different
+    views can recover the latent causal graph and the observation map for each view.
+  image: "/assets/images/research/causal.svg"
+  image_alt: "Latent variables Z_1 to Z_d forming a causal graph, each targeted by one interventional context k, and linearly mixed into two observed groups X = G_X Z and Y = G_Y Z"
+  links: []
 
-- title: "Research Project Two"
-  status: "Working notes"
-  description: >-
-    Another project can go here. Keep this short enough that a visitor can scan
-    the page quickly, then link to a PDF or longer write-up if you have one.
+
+- title: "Geometric Littlewood–Richardson Rules and Monodromy in Orthogonal Schubert Calculus"
+
+  category: "ongoing"
+  status: "2026–Present · Harvard Math Department · Senior Thesis"
+  description: >
+    Studying how the solutions to incidence problems on orthogonal Grassmannians
+    move and permute as the defining geometric conditions vary. I'm investigating
+    degenerations of Schubert intersections as isotropic flags are specialized
+    in Lie types B and D to understand the resulting Galois and
+    monodromy groups, and how orthogonality changes the geometric picture from ordinary
+    Schubert calculus.
+  image: "/assets/images/research/schubert.svg"
+  image_alt: "A move in Vakil's checker game for G(2,4): a descending and a rising black checker, with the critical row and diagonal marked, branching into a stay and a swap configuration"
+  links: []
+
+- title: "Real Geometry of Determinantal Varieties"
+  category: "ongoing"
+  status: "2025–Present · Harvard SEAS Applied Algebra Group"
+  description: >
+    Studying how many real low-rank matrices can occur when a real linear space
+    intersects a determinantal variety in finitely many points. I am working
+    to understand what bounds these real counts and how they connect to
+    minimum-rank matrix spaces and identifiability of tensor decompositions.
+  image: "/assets/images/research/determinantal.svg"
+  image_alt: "The real dual curve of the Edge quartic, with each region labelled 0, 2 or 4 by the number of real intersection points of the corresponding line with the curve"
+  links: []
+
+# - title: "Learning Representations in Chess Engines"
+#   category: "ongoing"
+#   status: "Exploratory · Harvard Chess Club"
+#   description: >
+#     Exploring the internal representations learned by Stockfish's NNUE evaluation
+#     network and how they encode chess structure, with particular interest in the
+#     relationship between learned representations, human-interpretable concepts,
+#     and competitive engine behavior.
+#   links: []
+
+- title: "Genomic and Transcriptomic Structure of the Tumor Microenvironment"
+  category: "past"
+  status: "Summer 2025 · Trinity College, University of Cambridge"
+  description: >
+    Analyzed bulk RNA-seq and whole-genome sequencing data to study genomic and transcriptomic determinants of the tumor microenvironment in esophageal cancer. 
+    Used survival modeling and multivariate association methods to identify statistically robust relationships with disease progression and prognosis. 
+    Integrated molecular and clinical data to characterize how variation in tumor biology and immune composition relates to patient outcomes.
+  image: "/assets/images/research/genomics.png"
+  image_alt: "Clustered heatmap of tumour-microenvironment cell-type scores across the full OAC cohort, with samples splitting into immune-hot, warm, cool and cold groups"
+  links: []
+
+- title: "Statistical Inference for Sparse Astronomical Time Series"
+  category: "past"
+  status: "2024–2025 · Center for Astrophysics | Harvard & Smithsonian"
+  description: >
+    Developed statistical methods for recovering temporal structure from sparse
+    and irregular astronomical observations. Built scalable inference pipelines
+    for more than 400,000 Chandra Source Catalog X-ray sources, with an emphasis
+    on extracting latent variability information from limited observations.
+  image: "/assets/images/research/astronomy.svg"
+  image_alt: "A dashed multiperiodic signal m(t) with twenty unevenly spaced noisy observations and their error bars"
   links: []

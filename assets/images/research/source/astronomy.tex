@@ -1,0 +1,46 @@
+% Website figure reproducing the "mpo-points" plot of:
+%   Earl P. Bellinger, Multiperiod, https://github.com/earlbellinger/Multiperiod
+%   src/simulation.m (licensed under the GNU LGPL v3.0).
+%
+% simulation.m builds the multiperiodic signal below, samples it at 20
+% uniformly random (unevenly spaced) times with uniform noise, and exports the
+% plot with matlab2tikz as mpo-points.tikz. That .tikz file is not committed
+% upstream, so this is a PGFPlots reimplementation of the same construction:
+% the signal and styling follow simulation.m (dashed grey latent curve, dark
+% red points with +-2*err error bars, unlabelled ticks); the sample times come
+% from make_data.py with a fixed seed, since the MATLAB script is unseeded.
+
+\documentclass[border=4pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\definecolor{ink}{HTML}{18202A}
+\definecolor{muted}{HTML}{65707A}
+\definecolor{line}{HTML}{D9D6CE}
+\definecolor{obs}{rgb}{0.5,0,0}   % simulation.m: 'color', [.5 0 0]
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9cm, height=4.2cm,
+    xmin=0, xmax=62.8319, ymin=-2.1, ymax=2.1,
+    axis lines=left, axis line style={muted, line width=.6pt, -},
+    ticks=none,
+    xlabel={$t$}, ylabel={$m(t)$},
+    label style={font=\small, text=ink},
+    xlabel style={at={(axis description cs:1,0)}, anchor=north east, yshift=2pt},
+    ylabel style={at={(axis description cs:0,1)}, anchor=south, rotate=-90, yshift=-2pt},
+    clip=false,
+  ]
+  % m(t) from simulation.m (angles in radians)
+  \addplot[muted, dashed, line width=1pt, samples=700, domain=0:62.8319]
+    {sin(deg(x)) + 0.4*sin(deg(2*x + pi/4)) + 0.2*sin(deg(0.71*x + pi)) + 0.1*sin(deg(0.71*8*x + pi/15))};
+
+  % noisy, unevenly spaced observations with error bars
+  \addplot[obs, only marks, mark=*, mark size=1.5pt,
+           error bars/.cd, y dir=both, y explicit,
+           error bar style={obs, line width=.7pt}, error mark options={obs, mark size=1.6pt, rotate=90}]
+    table[x=t, y=m, y error=err] {astronomy-points.dat};
+\end{axis}
+\end{tikzpicture}
+\end{document}

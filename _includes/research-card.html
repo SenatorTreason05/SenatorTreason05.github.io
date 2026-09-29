@@ -1,0 +1,23 @@
+<article class="list-card{% if include.project.image %} research-card{% endif %}">
+  <div class="research-card-text">
+    <div class="list-card-meta">{{ include.project.status }}</div>
+
+    <h2>{{ include.project.title }}</h2>
+
+    <p>{{ include.project.description }}</p>
+
+    {% if include.project.links.size > 0 %}
+    <div class="inline-links">
+      {% for link in include.project.links %}
+        <a href="{{ link.url }}">{{ link.label }} →</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+  {% if include.project.image %}
+  <figure class="research-card-diagram">
+    <img src="{{ include.project.image | relative_url }}" alt="{{ include.project.image_alt | escape }}" loading="lazy">
+  </figure>
+  {% endif %}
+</article>

@@ -1,6 +1,71 @@
-# Replace with your actual teaching, tutoring, TA, or course-support experience.
-- course: "Course / Section"
-  role: "Teaching Assistant"
+- course: "MATH 101 — Sets, Groups, and Real Analysis [Prof. Clifford Taubes]"
+  role: "Course Assistant"
   term: "Fall 2026"
-  description: "A one-sentence description of your role, office hours, or materials."
+  description: >
+    Content begins by drawing on John Stillwell's
+    <em><a href="https://link.springer.com/book/10.1007/978-3-319-01577-4">The Real Numbers: An Introduction to Set Theory and Analysis</a></em> for constructions of number systems from
+    Peano axioms, with constructions of the real numbers using Cauchy sequences
+    and Dedekind cuts. The algebra portion draws on Charles Pinter's
+    <em><a href="https://store.doverpublications.com/collections/math-algebra">A Book of Abstract Algebra</a></em>
+    and introduces groups, homomorphisms, quotients, and related
+    structures. Course materials available <a href="">here</a>.
+  links: []
+
+- course: "MATH 137 — Algebraic Geometry [Prof. Joe Harris]"
+  role: "Course Assistant"
+  term: "Spring 2026"
+  description: >
+    Content follows Joe Harris'
+    <em><a href="https://link.springer.com/book/10.1007/978-1-4757-2189-8">Algebraic Geometry: A First Course</a></em>.
+    Topics include affine and projective varieties, regular and rational maps,
+    ideals and irreducibility, Grassmannians, dimension,
+    Hilbert polynomials, smoothness and tangent spaces, degree and Bézout's theorem,
+    and classical projective varieties such as quadrics. Course materials available <a href="/assets/files/math137-notes.pdf" target="_blank" rel="noopener">here</a>.
+  links: []
+
+- course: "MATH 131 — Topology [Prof. Mike Hopkins]"
+  role: "Course Assistant"
+  term: "Fall 2025"
+  description: >
+    Content follows James Munkres'
+    <em><a href="https://www.pearson.com/en-us/pearsonplus/p/9780137848669">Topology</a></em>.
+    The course develops point-set topology through topological spaces and continuous
+    maps, product and quotient constructions, connectedness, compactness, countability
+    and separation axioms, and metrization. Later topics introduce homotopy,
+    fundamental groups, the Seifert–van Kampen theorem, and covering spaces. Course materials available <a href="/assets/files/math131-notes.pdf" target="_blank" rel="noopener">here</a>.
+  links: []
+
+- course: "MATH 113 — Complex Analysis [Prof. Joe Harris]"
+  role: "Course Assistant"
+  term: "Spring 2025"
+  description: >
+    Content follows Lars Ahlfors'
+    <em><a href="https://books.google.com/books/about/Complex_analysis.html?id=2MRuus-5GGoC">Complex Analysis</a></em>.
+    Topics include holomorphic and meromorphic functions, power series, complex
+    integration, Cauchy's theorem and integral formula, Laurent expansions,
+    isolated singularities and residues, the argument principle, harmonic
+    functions, and conformal mapping. Course materials available <a href="/assets/files/math113-notes.pdf" target="_blank" rel="noopener">here</a>.
+  links: []
+
+- course: "MATH 122 — Group Theory [Prof. Joe Harris]"
+  role: "Course Assistant"
+  term: "Fall 2024"
+  description: >
+    Content follows David Dummit and Richard Foote's
+    <em><a href="https://www.wiley.com/en-us/General%2B%26%2BIntroductory%2BMathematics/Algebra-c-MA10">Abstract Algebra</a></em>,
+    focusing on group theory. Topics include subgroups and quotient groups,
+    homomorphisms and isomorphism theorems, group actions, permutation groups,
+    the Sylow theorems, direct and semidirect products, and the structure of
+    finite abelian groups. Course materials available <a href="/assets/files/math122-notes.pdf" target="_blank" rel="noopener">here</a>.
+  links: []
+
+- course: "PHYSICS 19 — Theoretical Physics [Prof. Jacob Barandes]"
+  role: "Course Assistant"
+  term: "Fall 2024"
+  description: >
+    A first-principles introduction to modern theoretical physics spanning
+    Newtonian and analytical mechanics, chaos and orbital dynamics, Lagrangian
+    and Hamiltonian mechanics, thermodynamics and statistical physics,
+    electromagnetism, special relativity and gravitation, black holes, and
+    quantum theory, with the necessary mathematics developed along the way. 
   links: []

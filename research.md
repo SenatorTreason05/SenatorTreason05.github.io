@@ -4,38 +4,36 @@ permalink: /research/
 ---
 
 <header class="page-heading">
-  <p class="eyebrow">Research</p>
-  <h1>Projects and mathematical interests</h1>
-  <p class="lede">A concise record of current projects, working notes, and completed work.</p>
+  <!-- <h1>Research</h1> -->
+
+  <p class="research-quote">
+    “Algebra is but written geometry, and geometry is but figured algebra.”
+    <span>— Sophie Germain</span>
+  </p>
 </header>
 
-<div class="stack-list">
-{% for project in site.data.research %}
-<article class="list-card">
-  <div class="list-card-meta">{{ project.status }}</div>
-  <h2>{{ project.title }}</h2>
-  <p>{{ project.description }}</p>
-  {% if project.links.size > 0 %}
-  <div class="inline-links">
-    {% for link in project.links %}<a href="{{ link.url }}">{{ link.label }} →</a>{% endfor %}
+
+<section class="research-section">
+  <h2 class="section-heading">Ongoing Projects</h2>
+
+  <div class="stack-list">
+  {% for project in site.data.research %}
+    {% if project.category == "ongoing" %}
+    {% include research-card.html project=project %}
+    {% endif %}
+  {% endfor %}
   </div>
-  {% endif %}
-</article>
-{% endfor %}
-</div>
+</section>
 
-## Interests
 
-Edit this section with the areas you actually work in. For example:
+<section class="research-section">
+  <h2 class="section-heading">Past Projects</h2>
 
-- Algebraic geometry
-- Enumerative geometry
-- Schubert calculus
-- Combinatorics and geometry
-- Real algebraic geometry
-
-## Papers and preprints
-
-Add citations here as your work becomes public. A simple format is:
-
-**Your Name**, *Title of paper*, with Coauthor Name. Preprint, 2026. [PDF](#) · [arXiv](#)
+  <div class="stack-list">
+  {% for project in site.data.research %}
+    {% if project.category == "past" %}
+    {% include research-card.html project=project %}
+    {% endif %}
+  {% endfor %}
+  </div>
+</section>

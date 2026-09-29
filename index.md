@@ -1,68 +1,54 @@
 ---
-title: Home
 permalink: /
 ---
 
-<section class="hero">
-  <div class="hero-copy">
-    <p class="eyebrow">{{ site.role }}{% if site.affiliation %} · {{ site.affiliation }}{% endif %}</p>
-    <h1>{{ site.name }}</h1>
-    <p class="hero-tagline">{{ site.tagline }}</p>
-    <p class="hero-intro">
-      I am interested in mathematical problems where geometry, algebra, and combinatorics interact.
-      This site collects my research, notes, teaching materials, and occasional expository writing.
-    </p>
-    <div class="hero-actions">
-      <a class="button" href="{{ '/research/' | relative_url }}">Research</a>
-      <a class="button button-secondary" href="{{ '/notes/' | relative_url }}">Notes</a>
-      {% if site.show_cv %}<a class="text-link" href="{{ site.cv_path | relative_url }}">Download CV →</a>{% endif %}
-    </div>
-  </div>
+<p class="intro-line">{{ site.role }}{% if site.affiliation != "" %} @ {{ site.affiliation }}{% endif %}</p>
 
-  <aside class="profile-card" aria-label="Profile details">
-    <div class="monogram" aria-hidden="true">YN</div>
-    <dl>
-      <div><dt>Affiliation</dt><dd>{{ site.affiliation }}</dd></div>
-      {% if site.location != "" %}<div><dt>Location</dt><dd>{{ site.location }}</dd></div>{% endif %}
-      <div><dt>Email</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd></div>
-      <div><dt>GitHub</dt><dd><a href="https://github.com/{{ site.github_username }}">@{{ site.github_username }}</a></dd></div>
-    </dl>
+<h2 class="block-title">Research Interests</h2>
+
+<ul class="interests">
+  <li>
+    <a href="https://www.mathematik.uni-konstanz.de/working-group-real-geometry-and-algebra/research/invitation-to-nonlinear-algebra/">Nonlinear algebra</a>:
+    <a href="https://arxiv.org/abs/2211.16467">causal representation learning</a>,
+    <a href="https://arxiv.org/abs/2409.01356">real algebraic geometry</a>, and
+    <a href="https://arxiv.org/abs/2411.14080">algebraic statistics</a>
+  </li>
+
+  <li>
+    <a href="https://dash.harvard.edu/entities/publication/73120379-47fa-6bd4-e053-0100007fdf3b">Enumerative geometry</a>:
+    <a href="https://arxiv.org/abs/math/0302294">Geometric Littlewood–Richardson rules</a> and
+    <a href="https://arxiv.org/abs/2108.07905">Galois/monodromy groups</a>
+  </li>
+</ul>
+
+<div class="bio-grid">
+  <aside class="bio-aside">
+    {% if site.portrait != "" %}
+      <img class="portrait" src="{{ site.portrait | relative_url }}" alt="{{ site.name }}">
+    {% else %}
+      <div class="monogram" aria-hidden="true">{% assign name_parts = site.name | split: " " %}{% for part in name_parts %}{{ part | slice: 0 }}{% endfor %}</div>
+    {% endif %}
+
+    <ul class="side-links">
+      <li>{{ site.email }}</li>
+      <!-- {% if site.linkedin_url != "" %}<li><a href="{{ site.linkedin_url }}">LinkedIn</a></li>{% endif %} -->
+      {% if site.location != "" %}<li>{{ site.location }}</li>{% endif %}
+    </ul>
   </aside>
-</section>
 
-<section class="section-block">
-  <div class="section-heading">
-    <p class="eyebrow">Current work</p>
-    <h2>Research</h2>
-  </div>
-  <div class="card-grid">
-    {% for project in site.data.research limit:2 %}
-      <article class="card">
-        <div class="card-topline"><span>{{ project.status }}</span></div>
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.description }}</p>
-        {% if project.links.size > 0 %}
-          <div class="inline-links">
-            {% for link in project.links %}<a href="{{ link.url }}">{{ link.label }} →</a>{% endfor %}
-          </div>
-        {% endif %}
-      </article>
-    {% endfor %}
-  </div>
-  <p class="section-more"><a href="{{ '/research/' | relative_url }}">All research →</a></p>
-</section>
+  <div class="bio-body">
+    <h2 class="block-title">Bio{% if site.show_cv %} (<a href="{{ site.cv_path | relative_url }}">CV</a>){% endif %}</h2>
 
-<section class="section-block two-column">
-  <div>
-    <p class="eyebrow">Resources</p>
-    <h2>Notes</h2>
-    <p>Course notes, expository write-ups, problem sets, and material I want to keep organized in one place.</p>
-    <a class="text-link" href="{{ '/notes/' | relative_url }}">Browse notes →</a>
+    <p>
+      I’m a senior undergraduate at Harvard University studying math and physics. I first fell in love with math while teaching, and I haven’t looked back since! I'm broadly interested in how algebro-geometric structure can be used to understand the behavior of families of solutions to polynomial systems. 
+    </p>
+
+    <p>
+      I'm currently working on multi-modal causal representation learning from perfect interventions and investigating the real geometry of determinantal varieties in Prof. <a href="https://seigal.github.io/">Anna Seigal</a>'s group. I'm also completing my senior thesis advised by Prof. <a href="https://www.math.harvard.edu/people/harris-joe/">Joe Harris</a>, studying how solutions to incidence problems on orthogonal Grassmannians degenerate and permute as the defining geometric conditions vary.
+    </p>
+
+    <p>
+      In my daily life, I run the <a href="https://soco.college.harvard.edu/257861/home/">Harvard Fencing Club</a> and I'm an avid chess enthusiast (<a href="https://www.chess.com/member/ruthlessmorse">challenge me anytime!</a>). I enjoy volunteering as a teacher at the <a href="https://www.cambridgemathcircle.org/">Cambridge Math Circle</a>, and doing a directed reading on <a href="https://sites.math.washington.edu/~jarod/moduli.pdf">algebraic stacks</a>. To wind down, I like watching movies, biking, and spending time with loved ones.
+    </p>
   </div>
-  <div>
-    <p class="eyebrow">Exposition</p>
-    <h2>Writing</h2>
-    <p>Short mathematical explanations, reading notes, and occasional posts about ideas I am learning.</p>
-    <a class="text-link" href="{{ '/writing/' | relative_url }}">Read writing →</a>
-  </div>
-</section>
+</div>

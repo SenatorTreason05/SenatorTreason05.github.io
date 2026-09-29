@@ -1,27 +1,38 @@
 # ------------------------------------------------------------
 # Personal site settings — edit these first
 # ------------------------------------------------------------
-title: "YOUR NAME"
-short_name: "YOUR NAME"
-tagline: "Mathematics · Research · Teaching"
-description: "Personal academic website for YOUR NAME."
+title: "Adi Raj"
+short_name: "Adi Raj"
+description: "Personal academic website for Adi Raj."
 
-# For a user site named YOUR_GITHUB_USERNAME.github.io:
-url: "https://YOUR_GITHUB_USERNAME.github.io"
+# User site: SenatorTreason05.github.io
+url: "https://senatortreason05.github.io"
 baseurl: ""
 
 # Profile
-name: "YOUR NAME"
-role: "Student / Researcher in Mathematics"
-affiliation: "Your University"
+name: "Adi Raj"
+role: "A.B./A.M. in Mathematics and Physics"
+affiliation: "Harvard University"
 location: ""
-email: "your.email@example.com"
-github_username: "YOUR_GITHUB_USERNAME"
-# linkedin_username: ""
-# scholar_url: ""
 
-# Set to true after placing your CV at assets/files/cv.pdf
-show_cv: false
+# Written out longhand so address-harvesting bots do not pick it up.
+# Shown as plain text, not as a mailto: link.
+email: "araj [at] college.harvard.edu"
+
+# Portrait for the home page. Drop a portrait-orientation image in
+# assets/images/ and point to it, e.g. "/assets/images/portrait.jpg".
+# Left empty, the site shows your initials in a framed placeholder.
+portrait: "/assets/images/portrait.jpg"
+
+# Links
+linkedin_url: "https://www.linkedin.com/in/aditya-raj4/"
+
+# Puzzles below this Lichess rating are skipped when fetching a hard puzzle.
+puzzle_min_rating: 2000
+
+# The (CV) link beside the Bio heading. Drop the PDF at assets/files/cv.pdf;
+# until then the link is live but resolves to nothing.
+show_cv: true
 cv_path: "/assets/files/cv.pdf"
 
 # Site behavior
@@ -32,7 +43,6 @@ future: false
 
 # Plugins supported by GitHub Pages / the github-pages gem
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
 
 # Keep build output tidy
@@ -41,6 +51,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - assets/images/research/source
 
 # Defaults for ordinary pages
 
@@ -50,8 +61,3 @@ defaults:
       type: "pages"
     values:
       layout: default
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: post

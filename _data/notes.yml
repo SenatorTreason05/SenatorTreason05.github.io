@@ -1,10 +1,10 @@
-# Add one item per set of notes. Put PDFs in assets/files/ and update the URLs.
-- title: "Foundations of Mathematics"
-  term: "Fall 2026"
-  description: "Definitions, examples, proofs, and exercises from an introductory proof-based course."
-  url: "#"
-
-- title: "Mathematics Subject GRE Notes"
+- title: "MATH 232AR — Graduate Scheme Theory"
   term: ""
-  description: "A compact collection of formulas, concepts, and representative problems."
-  url: "#"
+  description: "Notes on schemes, morphisms, sheaves, affine and projective geometry, and foundational ideas in modern algebraic geometry."
+  url: "/assets/files/math232ar-notes.pdf"
+  
+- title: "MATH 221 — Graduate Commutative Algebra"
+  term: ""
+  description: "Notes on commutative algebra, including rings and modules, localization, integral dependence, dimension theory, and related topics."
+  url: "/assets/files/math221-notes.pdf"
+

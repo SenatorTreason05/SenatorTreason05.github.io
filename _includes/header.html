@@ -4,19 +4,22 @@
       {{ site.short_name | default: site.title }}
     </a>
 
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span class="sr-only">Toggle navigation</span>
-      <span></span><span></span><span></span>
-    </button>
-
     <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
       {% for item in site.data.navigation %}
-        {% assign item_url = item.url | relative_url %}
-        <a href="{{ item_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+        <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
       {% endfor %}
-      {% if site.show_cv %}
-        <a href="{{ site.cv_path | relative_url }}">CV</a>
-      {% endif %}
     </nav>
+
+    <div class="header-tools">
+      <button class="theme-toggle" type="button" data-theme-toggle>
+        <span class="sr-only">Switch colour scheme</span>
+        <span class="knight" aria-hidden="true">&#9822;</span>
+      </button>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
