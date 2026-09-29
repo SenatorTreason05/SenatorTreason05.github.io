@@ -5,8 +5,8 @@ title: "Adi Raj"
 short_name: "Adi Raj"
 description: "Personal academic website for Adi Raj."
 
-# User site: SenatorTreason05.github.io
-url: "https://senatortreason05.github.io"
+# Served at the custom domain set in the repo's Pages settings
+url: "https://adiraj.com"
 baseurl: ""
 
 # Profile
