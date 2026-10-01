@@ -100,12 +100,19 @@ glyph as the pieces on the puzzle board. Both palettes are defined at the
 top of `assets/css/style.scss` as `light-tokens` and `dark-tokens` — edit those mixins
 rather than hunting through the rules.
 
-Type follows joperea.com as closely as free fonts allow. That site uses futura-pt and
-proxima-nova, both Adobe Fonts licences a static site cannot serve, so the stand-ins are
-**Jost** (name, nav, headings) and **Mulish** (body), loaded from Google Fonts in
-`_includes/head.html`. The metrics are copied from the original: body 16px/1.8 at weight
-300, headings at weight 300, the name at 42px/700 with 1px tracking, nav at 13px uppercase
-with 1px tracking, and a 1200px canvas with 45px gutters.
+Type started from joperea.com, which uses futura-pt and proxima-nova (Adobe Fonts
+licences a static site cannot serve). The fonts, all loaded from Google Fonts in
+`_includes/head.html`, are:
+
+- **Outfit SemiBold**: the name in the header
+- **Jost**: nav, subtitle and other display text (the free futura-pt stand-in)
+- **IBM Plex Sans Medium**: section labels (Research Interests, Bio, Teaching, ...)
+- **Nunito Sans Light**: body text at 16.5px/1.8 (the free proxima-nova stand-in);
+  links in running text are SemiBold
+
+Running text on Home, Research and Teaching shares one width, `--measure` in
+`assets/css/style.scss`: 45rem, narrowing equally on all three pages in smaller windows.
+The canvas is 1200px with 45px gutters.
 
 The page title is written by hand in `_includes/head.html` rather than by jekyll-seo-tag,
 which insists on appending the tagline or description to the home page title.

@@ -23,6 +23,7 @@ permalink: /teaching/
   <div class="list-card-meta">{{ item.term }}</div>
   <h2>{{ item.course }}</h2>
   <p>{{ item.description }}</p>
+  {% if item.materials and item.materials != "" %}<a href="{{ item.materials | relative_url }}" target="_blank" rel="noopener">Course materials →</a>{% endif %}
   {% if item.links.size > 0 %}
   <div class="inline-links">
     {% for link in item.links %}<a href="{{ link.url }}">{{ link.label }} →</a>{% endfor %}
@@ -42,7 +43,7 @@ permalink: /teaching/
   {% if note.term != "" %}<div class="list-card-meta">{{ note.term }}</div>{% endif %}
   <h2>{{ note.title }}</h2>
   <p>{{ note.description }}</p>
-  <a href="{{ note.url | relative_url }}" target="_blank" rel="noopener">Open notes →</a>
+  <a href="{{ note.url | relative_url }}" target="_blank" rel="noopener">Notes →</a>
 </article>
 {% endfor %}
 </div>
@@ -76,7 +77,7 @@ permalink: /teaching/
       <button class="corner-button" type="button" data-fractal="reset">Reset</button>
     </div>
     <p class="toy-readout" data-fractal-readout></p>
-    <p class="toy-note">The Mandelbrot set is every $c$ for which $z \mapsto z^2 + c$, started at $0$, stays bounded. A Julia set fixes $c$ and varies the start. I learned about these in MATH 271Z — Complex Dynamics. </p>
+    <p class="toy-note">The Mandelbrot set is every $c$ for which $z \mapsto z^2 + c$, started at $0$, stays bounded. A Julia set fixes $c$ and varies the start. I'm learning about these sets in MATH 271Z — Complex Dynamics. </p>
   </section>
 
 </aside>

@@ -8,19 +8,20 @@
 @mixin light-tokens {
   color-scheme: light;
 
-  --bg:          #fcfcfc;
-  --bg-raised:   #ffffff;
-  --text:        #575757;
-  --text-strong: #222222;
-  --text-quiet:  #8d8d8d;
-  --rule:        #e1e1e1;
-  --rule-strong: #cbcbcb;
-  --nav:         #999999;
-  --nav-hover:   #111111;
-  --link:        #2f6f8f;
-  --link-hover:  #1b4a61;
-  --code-bg:     #f1f1ef;
-  --frame:       #ececec;
+  // "Paper & sienna" ground with sharp turquoise links
+  --bg:          #faf7f2;
+  --bg-raised:   #fffdf9;
+  --text:        #554e47;
+  --text-strong: #2a2420;
+  --text-quiet:  #8c8379;
+  --rule:        #e9e2d7;
+  --rule-strong: #d6ccbe;
+  --nav:         #9a9087;
+  --nav-hover:   #1f1a17;
+  --link:        #00707a;
+  --link-hover:  #004e55;
+  --code-bg:     #f3eee6;
+  --frame:       #ede6db;
   --good:        #2f7d4f;
   --good-glow:   rgba(47, 125, 79, .5);
   --bad:         #a4433a;
@@ -31,19 +32,20 @@
 @mixin dark-tokens {
   color-scheme: dark;
 
-  --bg:          #131517;
-  --bg-raised:   #1a1d20;
-  --text:        #b0b4b8;
-  --text-strong: #ededed;
-  --text-quiet:  #7e8489;
-  --rule:        #2a2e33;
-  --rule-strong: #3b4046;
-  --nav:         #85898e;
+  // Night: deep navy, blue-tinted greys, bright turquoise links
+  --bg:          #0b1222;
+  --bg-raised:   #111a2e;
+  --text:        #bcc4d6;
+  --text-strong: #f0f3f9;
+  --text-quiet:  #7e889e;
+  --rule:        #1d2840;
+  --rule-strong: #2b3854;
+  --nav:         #8a94aa;
   --nav-hover:   #ffffff;
-  --link:        #8cc0dd;
-  --link-hover:  #bcdcef;
-  --code-bg:     #1f2327;
-  --frame:       #23272b;
+  --link:        #5fc4c2;
+  --link-hover:  #a3e0de;
+  --code-bg:     #131c30;
+  --frame:       #172137;
   --good:        #6fbf8b;
   --good-glow:   rgba(111, 191, 139, .45);
   --bad:         #e08a80;
@@ -54,14 +56,20 @@
 :root {
   @include light-tokens;
 
-  /* Jost stands in for futura-pt and Mulish for proxima-nova; both of the
-     originals are Adobe Fonts licences that a static site cannot serve. */
+  /* Jost stands in for futura-pt and Nunito Sans for proxima-nova; both of
+     the originals are Adobe Fonts licences that a static site cannot serve.
+     The name in the header is Outfit SemiBold (see .site-title). */
   --display: "Jost", "Futura", "Futura PT", "Century Gothic", "Trebuchet MS", sans-serif;
   --label: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; // section labels only
-  --body: "Proxima Nova", "proxima-nova", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --body: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --max: 1200px;
+  // Width of running text on Research and Teaching: 45rem, or the page
+  // width less the widest side column (fractal 350px + 2.5rem gap) when the
+  // window is narrower, so the two stay equal at every desktop width
+  // (the Home bio instead runs to the page edge)
+  --measure: min(45rem, calc(100cqw - 350px - 2.5rem));
   --gutter: clamp(1.4rem, 5vw, 45px);
 }
 
@@ -80,6 +88,9 @@
 // Background on html as well as body, so nothing ever shows the browser's
 // default white canvas (e.g. mid page transition in dark mode)
 html { -webkit-text-size-adjust: 100%; background: var(--bg); }
+// Always reserve the scrollbar's width, so pages that scroll and pages that
+// don't are laid out identically and the header never shifts between them
+html { scrollbar-gutter: stable; }
 
 /* Weights and metrics below follow joperea.com: body 16px/1.8 at weight 300,
    headings in the display face at 300. */
@@ -88,7 +99,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--body);
-  font-size: 16px;
+  font-size: 16.5px; // Nunito Sans runs small next to Montserrat; this evens it out
   font-weight: 300;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
@@ -98,9 +109,13 @@ body {
 a {
   color: var(--link);
   text-decoration: underline;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
+// Links in running text are semibold against the light (300) body text,
+// so they stand out; links in headings and the nav keep their own weight
+:where(p, li) > a,
+:where(p, li) > em > a { font-weight: 600; }
 a:hover { color: var(--link-hover); }
 
 img { max-width: 100%; height: auto; }
@@ -145,7 +160,9 @@ hr {
 }
 
 /* The page is only as tall as its content — no filler, no sticky footer. */
-.page-shell { padding-block: 1.2rem 2.5rem; }
+// The content box is a size container, so --measure can be worked out from
+// the page's own width (cqw units)
+.page-shell { padding-block: 1.2rem 2.5rem; container-type: inline-size; }
 
 /* Loose Markdown written straight into a page still reads at a
    comfortable measure rather than spanning the full canvas. */
@@ -156,6 +173,7 @@ hr {
 .page-shell > h3,
 .page-shell > h4,
 .page-shell > blockquote { max-width: 78ch; }
+.page-shell > ul.interests { max-width: none; } // research interests: one line each where there's room
 
 .sr-only {
   position: absolute; width: 1px; height: 1px;
@@ -184,10 +202,10 @@ hr {
 }
 
 .site-title {
-  font-family: var(--display);
+  font-family: "Outfit", var(--display);
   font-size: clamp(1.9rem, 5.2vw, 2.625rem);
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 600;
+  letter-spacing: 0;
   line-height: 1.2;
   color: var(--text-strong);
   text-decoration: none;
@@ -348,8 +366,10 @@ hr {
 }
 
 .interests { list-style: none; padding: 0; margin: 0; }
-.interests > li { margin-bottom: .4em; max-width: 76ch; }
+.interests > li { margin-bottom: .4em; }
 
+// Photo and contact details on the left; the bio fills the rest of the row
+// and wraps only at the right edge of the page
 .bio-grid {
   display: grid;
   grid-template-columns: minmax(192px, 240px) minmax(0, 1fr);
@@ -384,7 +404,7 @@ hr {
 .side-links li { margin-bottom: .5em; overflow-wrap: anywhere; }
 
 .bio-body > :first-child { margin-top: 0; }
-.bio-body p { max-width: 78ch; }
+.bio-body p { max-width: none; } // full width of its column, to the page edge
 
 /* ===============================================================
    Sections and lists (interior pages)
@@ -442,7 +462,7 @@ hr {
 }
 .list-card h2 a { color: var(--text-strong); text-decoration: none; }
 .list-card h2 a:hover { color: var(--link); }
-.list-card p { max-width: 78ch; }
+.list-card p { max-width: var(--measure); }
 .list-card p:last-of-type { margin-bottom: .6em; }
 .stack-list.compact .list-card { margin-bottom: 1.4rem; }
 .stack-list.full-width .list-card p { max-width: none; } // Teaching page: text spans the page
@@ -458,12 +478,14 @@ hr {
 
 .research-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  // text column at the shared measure, figure pushed to the far edge
+  grid-template-columns: minmax(0, var(--measure)) 320px;
+  justify-content: space-between;
   gap: 3rem;
   align-items: start; // text starts right under the heading, as on the other pages
 }
 /* Alternate sides down each list: text | figure, figure | text, ... */
-.research-card:nth-of-type(even) { grid-template-columns: 320px minmax(0, 1fr); }
+.research-card:nth-of-type(even) { grid-template-columns: 320px minmax(0, var(--measure)); }
 .research-card:nth-of-type(even) .research-card-diagram { order: -1; }
 
 .research-card-diagram {
@@ -519,8 +541,11 @@ hr {
 
 .teaching-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 350px; // wide enough for the four fractal buttons on one row
-  gap: clamp(2.5rem, 5vw, 4.5rem);
+  // text at the shared measure; the 350px toy column (wide enough for the
+  // four fractal buttons on one row) sits at the far edge
+  grid-template-columns: minmax(0, var(--measure)) 350px;
+  justify-content: space-between;
+  gap: 2.5rem;
   align-items: start;
 }
 .teaching-main > .section-title:first-child { margin-top: 0; }
@@ -567,6 +592,7 @@ hr {
 .toy-readout + .toy-note { margin-top: .35rem; }
 
 @media (max-width: 900px) {
+  :root { --measure: 45rem; }
   .teaching-layout { grid-template-columns: 1fr; }
   .teaching-aside { position: static; max-height: none; overflow: visible; } // stacked below the notes, it just scrolls
 }

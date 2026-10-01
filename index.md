@@ -16,7 +16,7 @@ permalink: /
 
   <li>
     <a href="https://dash.harvard.edu/entities/publication/73120379-47fa-6bd4-e053-0100007fdf3b">Enumerative geometry</a>:
-    <a href="https://arxiv.org/abs/math/0302294">Geometric Littlewood–Richardson rules</a> and
+    <a href="https://arxiv.org/abs/math/0302294">the geometric Littlewood–Richardson rule</a> and
     <a href="https://arxiv.org/abs/2108.07905">Galois/monodromy groups</a>
   </li>
 </ul>
@@ -40,15 +40,15 @@ permalink: /
     <h2 class="block-title">Bio{% if site.show_cv %} (<a href="{{ site.cv_path | relative_url }}">CV</a>){% endif %}</h2>
 
     <p>
-      I’m a senior undergraduate at Harvard University studying math and physics. I first fell in love with math while teaching, and I haven’t looked back since! I'm broadly interested in how algebro-geometric structure can be used to understand the behavior of families of solutions to polynomial systems. 
+      I’m a senior undergraduate at Harvard University studying math and physics. I first fell in love with math while teaching, and I haven’t looked back since! I’m broadly interested in studying how geometric structure governs the behavior of solutions to algebraic systems.
     </p>
 
     <p>
-      I'm currently working on multi-modal causal representation learning from perfect interventions and investigating the real geometry of determinantal varieties in Prof. <a href="https://seigal.github.io/">Anna Seigal</a>'s group. I'm also completing my senior thesis advised by Prof. <a href="https://www.math.harvard.edu/people/harris-joe/">Joe Harris</a>, studying how solutions to incidence problems on orthogonal Grassmannians degenerate and permute as the defining geometric conditions vary.
+      I'm currently working on methods for multi-modal causal representation learning from perfect interventions and investigating the real algebraic geometry of determinantal varieties in Prof. <a href="https://seigal.github.io/">Anna Seigal</a>'s group. I'm also completing my senior thesis advised by Prof. <a href="https://www.math.harvard.edu/people/harris-joe/">Joe Harris</a>, studying how solutions to incidence problems on orthogonal Grassmannians degenerate as geometric conditions vary.
     </p>
 
     <p>
-      In my daily life, I run the <a href="https://soco.college.harvard.edu/257861/home/">Harvard Fencing Club</a> and I'm an avid chess enthusiast (<a href="https://www.chess.com/member/ruthlessmorse">challenge me anytime!</a>). I enjoy volunteering as a teacher at the <a href="https://www.cambridgemathcircle.org/">Cambridge Math Circle</a>, and doing a directed reading on <a href="https://sites.math.washington.edu/~jarod/moduli.pdf">algebraic stacks</a>. To wind down, I like watching movies, biking, and spending time with loved ones.
+      In my daily life, I run the <a href="https://soco.college.harvard.edu/257861/home/">Harvard Fencing Club</a> and I'm an avid chess enthusiast (<a href="https://www.chess.com/member/ruthlessmorse">challenge me!</a>). I'm enjoying volunteering as a teacher at the <a href="https://www.cambridgemathcircle.org/">Cambridge Math Circle</a>, and doing a directed reading on <a href="https://sites.math.washington.edu/~jarod/moduli.pdf">algebraic stacks</a>. To wind down, I like watching movies, eating food, biking, and spending time with loved ones.
     </p>
   </div>
 </div>

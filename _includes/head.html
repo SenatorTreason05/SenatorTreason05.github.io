@@ -1,8 +1,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fcfcfc" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#131517" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1222" media="(prefers-color-scheme: dark)">
   <meta name="color-scheme" content="light dark">
 
   <!-- Apply the stored colour scheme before first paint to avoid a flash. -->
@@ -21,9 +21,9 @@
        so moving between pages never shows the browser's default white.
        Values match --bg in style.scss. -->
   <style>
-    html { background: #fcfcfc; }
-    @media (prefers-color-scheme: dark) { html:not([data-theme="light"]) { background: #131517; } }
-    html[data-theme="dark"] { background: #131517; }
+    html { background: #faf7f2; }
+    @media (prefers-color-scheme: dark) { html:not([data-theme="light"]) { background: #0b1222; } }
+    html[data-theme="dark"] { background: #0b1222; }
   </style>
 
   <!-- Titled here rather than by jekyll-seo-tag, which insists on appending
@@ -35,7 +35,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Jost:wght@300;400;500;700&family=Montserrat:ital,wght@0,300;0,400;0,600;1,300&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Outfit:wght@600&family=Jost:wght@300;400;500;700&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;1,300;1,600&display=swap">
 
   {% if page.url == '/fun/' %}
     <!-- Chessground's three layers, loaded BEFORE the site stylesheet so
@@ -45,7 +45,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lichess-org/chessground@10.4.0/assets/chessground.cburnett.css">
   {% endif %}
 
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <!-- ?v= changes on every build, so browsers never use a stale stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
   <script>
     window.MathJax = {
