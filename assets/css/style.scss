@@ -534,6 +534,17 @@ hr {
 
 .section-note { color: var(--text-quiet); max-width: 70ch; }
 
+/* Footer (one quiet line under every page, _includes/footer.html) */
+.site-footer > .container > p {
+  margin: 0;
+  padding: 1rem 0 1.75rem;
+  border-top: 1px solid var(--rule);
+  font-size: .8125rem;
+  color: var(--text-quiet);
+}
+.site-footer a { color: inherit; font-weight: inherit; text-decoration-thickness: 1px; }
+.site-footer a:hover { color: var(--link); }
+
 /* ===============================================================
    Teaching page: Game of Life in the right-hand column, pinned
    while the page scrolls (teaching-toys.js)
