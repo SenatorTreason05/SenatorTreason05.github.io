@@ -30,7 +30,7 @@ permalink: /
     {% endif %}
 
     <ul class="side-links">
-      <li>{{ site.email }}</li>
+      {% if site.email_encoded %}<li><a data-email="{{ site.email_encoded }}">Email</a><noscript>Email (enable JavaScript to see it)</noscript></li>{% endif %}
       <!-- {% if site.linkedin_url != "" %}<li><a href="{{ site.linkedin_url }}">LinkedIn</a></li>{% endif %} -->
       {% if site.location != "" %}<li>{{ site.location }}</li>{% endif %}
     </ul>

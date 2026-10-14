@@ -16,7 +16,8 @@ Open `_config.yml` and check:
 
 - `name` / `title` / `short_name` — how your name appears in the header and tab
 - `role` and `affiliation` — these combine into the line under your name
-- `email` — shown as plain text, not a `mailto:` link, so bots do not harvest it
+- `email_encoded` — your email, reversed and base64-encoded (the command is in `_config.yml`);
+  the browser decodes it into a `mailto:` link, so it never appears in the HTML for bots to scrape
 - `linkedin_url` — leave `""` to drop the link from the home page
 - `url` — set this to `https://YOUR_GITHUB_USERNAME.github.io` before deploying
 
@@ -58,9 +59,9 @@ Re-saving through almost any image editor drops it.
 
 ## Add a CV
 
-The `(CV)` link beside the Bio heading is already switched on, so **it currently points at a
-file that does not exist**. Drop the PDF at `assets/files/cv.pdf` and it starts working —
-no config change needed. To hide the link until then, set `show_cv: false` in `_config.yml`.
+The `(CV)` link beside the Bio heading points at `assets/files/cv.pdf`. To update the CV,
+overwrite that file with the new PDF (keep the name `cv.pdf`). To hide the link, set
+`show_cv: false` in `_config.yml`.
 
 ## Add PDFs / notes
 

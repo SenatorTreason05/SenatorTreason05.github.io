@@ -15,9 +15,11 @@ role: "A.B./A.M. in Mathematics and Physics"
 affiliation: "Harvard University"
 location: ""
 
-# Written out longhand so address-harvesting bots do not pick it up.
-# Shown as plain text, not as a mailto: link.
-email: "araj [at] college.harvard.edu"
+# The address is never written out in the repo or the built HTML: this is
+# the email reversed, then base64-encoded. assets/js/main.js decodes it in
+# the visitor's browser and turns it into a mailto: link. To change it, run
+#   python -c "import base64;print(base64.b64encode('you@example.com'[::-1].encode()).decode())"
+email_encoded: "dWRlLmRyYXZyYWguZWdlbGxvY0BqYXJh"
 
 # Portrait for the home page. Drop a portrait-orientation image in
 # assets/images/ and point to it, e.g. "/assets/images/portrait.jpg".
@@ -30,8 +32,8 @@ linkedin_url: "https://www.linkedin.com/in/aditya-raj4/"
 # Puzzles below this Lichess rating are skipped when fetching a hard puzzle.
 puzzle_min_rating: 2000
 
-# The (CV) link beside the Bio heading. Drop the PDF at assets/files/cv.pdf;
-# until then the link is live but resolves to nothing.
+# The (CV) link beside the Bio heading. To update it, replace
+# assets/files/cv.pdf with the new PDF (keep the filename).
 show_cv: true
 cv_path: "/assets/files/cv.pdf"
 

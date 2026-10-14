@@ -58,6 +58,22 @@
   }
 
   /* ---------------------------------------------------------------
+     Email
+     The address ships reversed and base64-encoded (see _config.yml)
+     and is only assembled here, so scrapers reading the HTML never
+     see it. Runs after the new-tab pass above: mailto: links should
+     not open a blank tab.
+     --------------------------------------------------------------- */
+  [].forEach.call(document.querySelectorAll('a[data-email]'), function (a) {
+    try {
+      var address = atob(a.getAttribute('data-email')).split('').reverse().join('');
+      a.href = 'mailto:' + address;
+      a.textContent = address;
+      a.removeAttribute('data-email');
+    } catch (e) { /* leave the "Email" placeholder */ }
+  });
+
+  /* ---------------------------------------------------------------
      Page changes
      Fade the content out before following an internal link; the next
      page fades it back in (style.scss). Anything that isn't a plain
